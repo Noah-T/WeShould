@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1568225E5479CD1E7E01037 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7C78B67711E5EDC1A5A9CE /* libPods.a */; };
+		DE2360B619EC62C100EE347D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2360B519EC62C100EE347D /* Accounts.framework */; };
+		DE287B1E19EC623600243A5A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE287B1D19EC623600243A5A /* Social.framework */; };
+		DE6F217519EC5EF30039DE0E /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE6F217319EC5EF30039DE0E /* TemplateIcon2x.png */; };
+		DE770CD119E7998E00195F9C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE770CD019E7998E00195F9C /* LoginViewController.m */; };
+		DE770CD419E7999900195F9C /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE770CD319E7999900195F9C /* SignupViewController.m */; };
 		DED1AD4F19E345B300F2F082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED1AD4E19E345B300F2F082 /* main.m */; };
 		DED1AD5219E345B300F2F082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED1AD5119E345B300F2F082 /* AppDelegate.m */; };
-		DED1AD5519E345B300F2F082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED1AD5419E345B300F2F082 /* ViewController.m */; };
 		DED1AD5819E345B300F2F082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED1AD5619E345B300F2F082 /* Main.storyboard */; };
 		DED1AD5A19E345B300F2F082 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED1AD5919E345B300F2F082 /* Images.xcassets */; };
 		DED1AD5D19E345B300F2F082 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED1AD5B19E345B300F2F082 /* LaunchScreen.xib */; };
 		DED1AD6919E345B300F2F082 /* WeShouldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DED1AD6819E345B300F2F082 /* WeShouldTests.m */; };
+		DEDA65AC19E34E51006B18F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65AB19E34E51006B18F4 /* AudioToolbox.framework */; };
+		DEDA65AE19E34E5C006B18F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65AD19E34E5C006B18F4 /* CFNetwork.framework */; };
+		DEDA65B019E34E65006B18F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65AF19E34E65006B18F4 /* CoreGraphics.framework */; };
+		DEDA65B219E34E6C006B18F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65B119E34E6C006B18F4 /* CoreLocation.framework */; };
+		DEDA65B419E34E7A006B18F4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65B319E34E7A006B18F4 /* libz.dylib */; };
+		DEDA65B619E34E83006B18F4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65B519E34E83006B18F4 /* MobileCoreServices.framework */; };
+		DEDA65B819E34E8D006B18F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65B719E34E8D006B18F4 /* QuartzCore.framework */; };
+		DEDA65BA19E34E96006B18F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65B919E34E96006B18F4 /* Security.framework */; };
+		DEDA65BC19E34E9E006B18F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65BB19E34E9E006B18F4 /* StoreKit.framework */; };
+		DEDA65BE19E34EA6006B18F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65BD19E34EA6006B18F4 /* SystemConfiguration.framework */; };
+		DEDA65C119E34F5C006B18F4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65BF19E34F5C006B18F4 /* Bolts.framework */; };
+		DEDA65C219E34F5C006B18F4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65C019E34F5C006B18F4 /* Parse.framework */; };
+		DEDA65C519E35016006B18F4 /* ActivitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA65C419E35016006B18F4 /* ActivitiesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +45,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38A708905E3B0B9E206E7BA8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4D7C78B67711E5EDC1A5A9CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7017A3C002F2DB80C86B933A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DE2360B519EC62C100EE347D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		DE287B1D19EC623600243A5A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DE6F217319EC5EF30039DE0E /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+		DE6F217619EC5F0A0039DE0E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		DE6F217719EC5F0A0039DE0E /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+		DE770CCF19E7998E00195F9C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DE770CD019E7998E00195F9C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DE770CD219E7999900195F9C /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		DE770CD319E7999900195F9C /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		DED1AD4919E345B300F2F082 /* WeShould.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeShould.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED1AD4D19E345B300F2F082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED1AD4E19E345B300F2F082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DED1AD5019E345B300F2F082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DED1AD5119E345B300F2F082 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DED1AD5319E345B300F2F082 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DED1AD5419E345B300F2F082 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DED1AD5719E345B300F2F082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DED1AD5919E345B300F2F082 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DED1AD5C19E345B300F2F082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DED1AD6219E345B300F2F082 /* WeShouldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeShouldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED1AD6719E345B300F2F082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED1AD6819E345B300F2F082 /* WeShouldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeShouldTests.m; sourceTree = "<group>"; };
+		DEDA65AB19E34E51006B18F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DEDA65AD19E34E5C006B18F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DEDA65AF19E34E65006B18F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DEDA65B119E34E6C006B18F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DEDA65B319E34E7A006B18F4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DEDA65B519E34E83006B18F4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DEDA65B719E34E8D006B18F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DEDA65B919E34E96006B18F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DEDA65BB19E34E9E006B18F4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DEDA65BD19E34EA6006B18F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DEDA65BF19E34F5C006B18F4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		DEDA65C019E34F5C006B18F4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		DEDA65C319E35016006B18F4 /* ActivitiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesTableViewController.h; sourceTree = "<group>"; };
+		DEDA65C419E35016006B18F4 /* ActivitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +89,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2360B619EC62C100EE347D /* Accounts.framework in Frameworks */,
+				DE287B1E19EC623600243A5A /* Social.framework in Frameworks */,
+				DEDA65BE19E34EA6006B18F4 /* SystemConfiguration.framework in Frameworks */,
+				DEDA65BC19E34E9E006B18F4 /* StoreKit.framework in Frameworks */,
+				DEDA65BA19E34E96006B18F4 /* Security.framework in Frameworks */,
+				DEDA65B819E34E8D006B18F4 /* QuartzCore.framework in Frameworks */,
+				DEDA65B619E34E83006B18F4 /* MobileCoreServices.framework in Frameworks */,
+				DEDA65B419E34E7A006B18F4 /* libz.dylib in Frameworks */,
+				DEDA65B219E34E6C006B18F4 /* CoreLocation.framework in Frameworks */,
+				DEDA65B019E34E65006B18F4 /* CoreGraphics.framework in Frameworks */,
+				DEDA65C119E34F5C006B18F4 /* Bolts.framework in Frameworks */,
+				DEDA65AE19E34E5C006B18F4 /* CFNetwork.framework in Frameworks */,
+				DEDA65C219E34F5C006B18F4 /* Parse.framework in Frameworks */,
+				DEDA65AC19E34E51006B18F4 /* AudioToolbox.framework in Frameworks */,
+				B1568225E5479CD1E7E01037 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +117,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE770CCB19E794F100195F9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE2360B519EC62C100EE347D /* Accounts.framework */,
+				DE287B1D19EC623600243A5A /* Social.framework */,
+				DEDA65BD19E34EA6006B18F4 /* SystemConfiguration.framework */,
+				DEDA65BB19E34E9E006B18F4 /* StoreKit.framework */,
+				DEDA65B919E34E96006B18F4 /* Security.framework */,
+				DEDA65B719E34E8D006B18F4 /* QuartzCore.framework */,
+				DEDA65B519E34E83006B18F4 /* MobileCoreServices.framework */,
+				DEDA65B319E34E7A006B18F4 /* libz.dylib */,
+				DEDA65B119E34E6C006B18F4 /* CoreLocation.framework */,
+				DEDA65AF19E34E65006B18F4 /* CoreGraphics.framework */,
+				DEDA65AD19E34E5C006B18F4 /* CFNetwork.framework */,
+				DEDA65AB19E34E51006B18F4 /* AudioToolbox.framework */,
+				DEDA65BF19E34F5C006B18F4 /* Bolts.framework */,
+				DEDA65C019E34F5C006B18F4 /* Parse.framework */,
+				4D7C78B67711E5EDC1A5A9CE /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DED1AD4019E345B300F2F082 = {
 			isa = PBXGroup;
 			children = (
+				DED1AD5619E345B300F2F082 /* Main.storyboard */,
+				DE6F217619EC5F0A0039DE0E /* Podfile */,
+				DE6F217719EC5F0A0039DE0E /* TemplateIcon2x.png */,
+				DE770CCB19E794F100195F9C /* Frameworks */,
 				DED1AD4B19E345B300F2F082 /* WeShould */,
 				DED1AD6519E345B300F2F082 /* WeShouldTests */,
 				DED1AD4A19E345B300F2F082 /* Products */,
+				F17865F723926B12C1E2B672 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +165,15 @@
 		DED1AD4B19E345B300F2F082 /* WeShould */ = {
 			isa = PBXGroup;
 			children = (
+				DE6F217319EC5EF30039DE0E /* TemplateIcon2x.png */,
 				DED1AD5019E345B300F2F082 /* AppDelegate.h */,
 				DED1AD5119E345B300F2F082 /* AppDelegate.m */,
-				DED1AD5319E345B300F2F082 /* ViewController.h */,
-				DED1AD5419E345B300F2F082 /* ViewController.m */,
-				DED1AD5619E345B300F2F082 /* Main.storyboard */,
+				DEDA65C319E35016006B18F4 /* ActivitiesTableViewController.h */,
+				DEDA65C419E35016006B18F4 /* ActivitiesTableViewController.m */,
+				DE770CCF19E7998E00195F9C /* LoginViewController.h */,
+				DE770CD019E7998E00195F9C /* LoginViewController.m */,
+				DE770CD219E7999900195F9C /* SignupViewController.h */,
+				DE770CD319E7999900195F9C /* SignupViewController.m */,
 				DED1AD5919E345B300F2F082 /* Images.xcassets */,
 				DED1AD5B19E345B300F2F082 /* LaunchScreen.xib */,
 				DED1AD4C19E345B300F2F082 /* Supporting Files */,
@@ -119,6 +207,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F17865F723926B12C1E2B672 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38A708905E3B0B9E206E7BA8 /* Pods.debug.xcconfig */,
+				7017A3C002F2DB80C86B933A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DED1AD6C19E345B300F2F082 /* Build configuration list for PBXNativeTarget "WeShould" */;
 			buildPhases = (
+				7129256F6F17ECE900BE65F0 /* Check Pods Manifest.lock */,
 				DED1AD4519E345B300F2F082 /* Sources */,
 				DED1AD4619E345B300F2F082 /* Frameworks */,
 				DED1AD4719E345B300F2F082 /* Resources */,
+				40E58BAC55CD36E9EF0C936E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6F217519EC5EF30039DE0E /* TemplateIcon2x.png in Resources */,
 				DED1AD5819E345B300F2F082 /* Main.storyboard in Resources */,
 				DED1AD5D19E345B300F2F082 /* LaunchScreen.xib in Resources */,
 				DED1AD5A19E345B300F2F082 /* Images.xcassets in Resources */,
@@ -214,14 +314,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40E58BAC55CD36E9EF0C936E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7129256F6F17ECE900BE65F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DED1AD4519E345B300F2F082 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED1AD5519E345B300F2F082 /* ViewController.m in Sources */,
+				DE770CD119E7998E00195F9C /* LoginViewController.m in Sources */,
 				DED1AD5219E345B300F2F082 /* AppDelegate.m in Sources */,
+				DEDA65C519E35016006B18F4 /* ActivitiesTableViewController.m in Sources */,
 				DED1AD4F19E345B300F2F082 /* main.m in Sources */,
+				DE770CD419E7999900195F9C /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +385,7 @@
 				DED1AD5719E345B300F2F082 /* Base */,
 			);
 			name = Main.storyboard;
+			path = WeShould;
 			sourceTree = "<group>";
 		};
 		DED1AD5B19E345B300F2F082 /* LaunchScreen.xib */ = {
@@ -341,8 +477,13 @@
 		};
 		DED1AD6D19E345B300F2F082 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38A708905E3B0B9E206E7BA8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WeShould/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,8 +492,13 @@
 		};
 		DED1AD6E19E345B300F2F082 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7017A3C002F2DB80C86B933A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WeShould/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +558,7 @@
 				DED1AD6E19E345B300F2F082 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DED1AD6F19E345B300F2F082 /* Build configuration list for PBXNativeTarget "WeShouldTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +567,7 @@
 				DED1AD7119E345B300F2F082 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

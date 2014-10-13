@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"HLh6vGMEIITwBefYZUQ2b6K1uvrzrBEw459Qe0iE"
+                  clientKey:@"qzIO8FMEvV8Y0iGi29ksKdFJEBZkj6jmtQ5SU6ej"];
     return YES;
 }
 
