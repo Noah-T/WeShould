@@ -10,6 +10,9 @@
 #import <Parse/Parse.h>
 
 @interface ActivitiesTableViewController ()
+
+@property (strong, nonatomic)NSMutableArray *activitiesArray;
+
 - (IBAction)logout:(id)sender;
 
 @end
@@ -35,7 +38,17 @@
 {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    
+    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+    [query whereKeyExists:@"activityName"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, error.userInfo );
+        } else {
+            self.activitiesArray = [NSMutableArray arrayWithArray:objects];
+            NSLog(@"There are %d objects in the activities array", self.activitiesArray.count);
+            [self.tableView reloadData];
+        }
+    }];
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
@@ -60,24 +73,28 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.activitiesArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    PFObject *activity = [self.activitiesArray objectAtIndex:indexPath.row];
     
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.textLabel.text =  [activity objectForKey:@"activityName"];
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
