@@ -8,6 +8,7 @@
 
 #import "ActivitiesTableViewController.h"
 #import <Parse/Parse.h>
+#import "EventViewController.h"
 
 @interface ActivitiesTableViewController ()
 
@@ -21,22 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-   
-    
-    
-
-    
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear getting caled");
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
     [query whereKeyExists:@"activityName"];
@@ -66,6 +57,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 #pragma mark - Table view data source
@@ -131,15 +127,37 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ExistingActivitySegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        
+        NATActivity *activity = [self.activitiesArray objectAtIndex:indexPath.row];
+        
+        EventViewController *destinationController = (EventViewController*)segue.destinationViewController;
+        
+        //pass the entire activity to the detail view
+        destinationController.activity = activity;
+        //pass properties individually (text views require this)
+        destinationController.activityNameText = [activity objectForKey:@"activityName"];
+        destinationController.linkFieldText = [activity objectForKey:@"linkField"];
+        destinationController.locationFieldText = [activity objectForKey:@"locationField"];
+        destinationController.phoneNumberFieldText = [activity objectForKey:@"phoneNumberField"];
+        destinationController.descriptionFieldText = [activity objectForKey:@"descriptionField"];
+        
+        
+        
+        
+        
+    }
 }
-*/
+
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
