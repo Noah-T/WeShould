@@ -83,6 +83,7 @@
 }
 
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *activity = [self.activitiesArray objectAtIndex:indexPath.row];
     

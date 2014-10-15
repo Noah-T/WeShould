@@ -16,13 +16,16 @@
 @implementation AppDelegate
 
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+    [self customizeAppearance];
 
     // Override point for customization after application launch.
     [Parse setApplicationId:@"HLh6vGMEIITwBefYZUQ2b6K1uvrzrBEw459Qe0iE"
                   clientKey:@"qzIO8FMEvV8Y0iGi29ksKdFJEBZkj6jmtQ5SU6ej"];
+    
     return YES;
 }
 
@@ -46,6 +49,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)customizeAppearance {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.557 green:0.675 blue:0.788 alpha:1]];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]];
+    [[UITabBar appearance]setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance]setBarTintColor:[UIColor colorWithRed:0.557 green:0.675 blue:0.788 alpha:1]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication]setStatusBarHidden:NO];
+    
 }
 
 @end
