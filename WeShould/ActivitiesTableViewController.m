@@ -36,7 +36,7 @@
             NSLog(@"Error: %@ %@", error, error.userInfo );
         } else {
             self.activitiesArray = [NSMutableArray arrayWithArray:objects];
-            NSLog(@"There are %d objects in the activities array", self.activitiesArray.count);
+
             [self.tableView reloadData];
         }
     }];
@@ -67,13 +67,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     return self.activitiesArray.count;
 }
