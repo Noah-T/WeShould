@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NATActivity.h"
+#import <Parse/Parse.h>
 
 @interface EventViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *activityLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *activityImage;
 
 
@@ -28,7 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *descriptionField;
 @property (strong, nonatomic)NSString *descriptionFieldText;
-@property (strong, nonatomic)NATActivity *activity;
+@property (strong, nonatomic)PFObject *activity;
 
 - (IBAction)saveActivity:(id)sender;
 

@@ -27,7 +27,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear getting caled");
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
     [query whereKeyExists:@"activityName"];
@@ -42,7 +41,7 @@
     }];
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
-        NSLog(@"Current user: %@", currentUser.username);
+        //user is logged in
        
         
     }
@@ -85,6 +84,7 @@
     
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
     
     cell.textLabel.text =  [activity objectForKey:@"activityName"];
     // Configure the cell...
@@ -138,7 +138,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         
-        NATActivity *activity = [self.activitiesArray objectAtIndex:indexPath.row];
+        PFObject *activity = [self.activitiesArray objectAtIndex:indexPath.row];
         
         EventViewController *destinationController = (EventViewController*)segue.destinationViewController;
         
