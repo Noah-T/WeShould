@@ -142,6 +142,12 @@
         
         EventViewController *destinationController = (EventViewController*)segue.destinationViewController;
         
+        //create a weak pointer to self (avoid a strong reference cycle)
+        __weak typeof(self) welf = self;
+        destinationController.backgroundSaveCompletionHandler = ^{
+            [welf.tableView reloadData];
+        };
+        
         //pass the entire activity to the detail view
         destinationController.activity = activity;
         //pass properties individually (text views require this)

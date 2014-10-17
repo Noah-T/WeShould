@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vhu-kQ-UzE">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -140,7 +139,7 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="100" id="sxw-FA-x7d"/>
                                 </constraints>
-                                <state key="normal" image="monkey">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -194,26 +193,26 @@
                                 <exclude reference="gY0-Gj-EbF"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="W25-4E-KpZ"/>
-                                <exclude reference="vR9-Lq-IhB"/>
-                                <exclude reference="AvC-r7-5gb"/>
-                                <exclude reference="khH-SZ-oA6"/>
-                                <exclude reference="86Q-ae-gA5"/>
-                                <exclude reference="LDa-uD-FR3"/>
-                                <exclude reference="aje-2r-hQz"/>
                                 <exclude reference="2RI-bM-s05"/>
                                 <exclude reference="EK5-hX-j9m"/>
                                 <exclude reference="NRg-Bg-mmZ"/>
                                 <exclude reference="jVd-en-ve2"/>
+                                <exclude reference="86Q-ae-gA5"/>
+                                <exclude reference="LDa-uD-FR3"/>
+                                <exclude reference="aje-2r-hQz"/>
                                 <exclude reference="3HH-Yl-RU7"/>
                                 <exclude reference="XF2-NR-gt7"/>
                                 <exclude reference="cho-jv-UiU"/>
+                                <exclude reference="Xhi-2D-j4z"/>
+                                <exclude reference="W25-4E-KpZ"/>
+                                <exclude reference="vR9-Lq-IhB"/>
+                                <exclude reference="AvC-r7-5gb"/>
+                                <exclude reference="khH-SZ-oA6"/>
+                                <exclude reference="9G8-mt-VHZ"/>
                                 <exclude reference="2yX-jz-tdO"/>
                                 <exclude reference="Itj-e5-Iac"/>
                                 <exclude reference="Spi-be-uhY"/>
                                 <exclude reference="quM-Or-7Um"/>
-                                <exclude reference="9G8-mt-VHZ"/>
-                                <exclude reference="Xhi-2D-j4z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -227,30 +226,31 @@
                                 <include reference="gY0-Gj-EbF"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="W25-4E-KpZ"/>
-                                <include reference="vR9-Lq-IhB"/>
-                                <include reference="AvC-r7-5gb"/>
-                                <include reference="khH-SZ-oA6"/>
-                                <include reference="86Q-ae-gA5"/>
-                                <include reference="LDa-uD-FR3"/>
-                                <include reference="aje-2r-hQz"/>
                                 <include reference="2RI-bM-s05"/>
                                 <include reference="EK5-hX-j9m"/>
                                 <include reference="NRg-Bg-mmZ"/>
                                 <include reference="jVd-en-ve2"/>
+                                <include reference="86Q-ae-gA5"/>
+                                <include reference="LDa-uD-FR3"/>
+                                <include reference="aje-2r-hQz"/>
                                 <include reference="3HH-Yl-RU7"/>
                                 <include reference="XF2-NR-gt7"/>
                                 <include reference="cho-jv-UiU"/>
+                                <include reference="Xhi-2D-j4z"/>
+                                <include reference="W25-4E-KpZ"/>
+                                <include reference="vR9-Lq-IhB"/>
+                                <include reference="AvC-r7-5gb"/>
+                                <include reference="khH-SZ-oA6"/>
+                                <include reference="9G8-mt-VHZ"/>
                                 <include reference="2yX-jz-tdO"/>
                                 <exclude reference="Itj-e5-Iac"/>
                                 <include reference="Spi-be-uhY"/>
                                 <include reference="quM-Or-7Um"/>
-                                <include reference="9G8-mt-VHZ"/>
-                                <include reference="Xhi-2D-j4z"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityImageButton" destination="gY0-Gj-EbF" id="YYd-Bb-ARD"/>
                         <outlet property="activityNameField" destination="wgY-fB-tdH" id="BWB-no-LNd"/>
                         <outlet property="descriptionField" destination="4Mc-Oq-OzI" id="jyo-Wq-0xN"/>
                         <outlet property="linkField" destination="BYj-F3-0QM" id="eTf-UE-ebU"/>
@@ -1020,11 +1020,10 @@
     </scenes>
     <resources>
         <image name="left_arrow" width="128" height="128"/>
-        <image name="monkey" width="1200" height="800"/>
         <image name="skydivers" width="583" height="735"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9rV-du-VS4"/>
         <segue reference="lSl-tb-u12"/>
-        <segue reference="F5r-AX-GFj"/>
     </inferredMetricsTieBreakers>
 </document>

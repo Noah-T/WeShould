@@ -20,18 +20,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.activityImageButton.imageView.image = [UIImage imageNamed:@"monkey"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.activityNameField.text = self.activityNameText;
-    self.linkField.text = self.linkFieldText;
-    self.locationField.text = self.locationFieldText;
-    self.phoneNumberField.text = self.phoneNumberFieldText;
-    self.descriptionField.text = self.descriptionFieldText;
+    NSLog(@"viewWillAppear getting called");
+    
+    if (self.activity != nil) {
+        
+        
+        self.activityNameField.text = self.activityNameText;
+        self.linkField.text = self.linkFieldText;
+        self.locationField.text = self.locationFieldText;
+        self.phoneNumberField.text = self.phoneNumberFieldText;
+        self.descriptionField.text = self.descriptionFieldText;
+        
+        PFQuery *imageQuery = [PFQuery queryWithClassName:@"Activity"];
+        PFObject *activity = [imageQuery getObjectWithId:self.activity.objectId];
+        
+        if ([activity objectForKey:@"activityImage"]) {
+            NSLog(@"image does exist already");
+            PFFile *imageFile = [activity objectForKey:@"activityImage"];
+            NSURL *imageFileUrl = [[NSURL alloc]initWithString:imageFile.url];
+            NSData *imageDataFromURL = [NSData dataWithContentsOfURL:imageFileUrl];
+            self.activityImageButton.imageView.image = [UIImage imageWithData:imageDataFromURL];
+            
+            
+        }
+    }
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -62,7 +81,25 @@
             [activity setObject:self.locationField.text forKey:@"locationField"];
             [activity setObject:self.phoneNumberField.text forKey:@"phoneNumberField"];
             [activity setObject:self.descriptionField.text forKey:@"descriptionField"];
-            [activity save];
+            PFFile *tempImage = [self.imageObject objectForKey:@"activityImage"];
+            [activity setObject:tempImage forKey:@"activityImage"];
+            
+            [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (!succeeded) {
+                        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Activity failed to save." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                        [alertView show];
+                    } else {
+                        NSLog(@"New activity saved");
+                        if (self.backgroundSaveCompletionHandler) {
+                            self.backgroundSaveCompletionHandler();
+                        }
+                    }
+                    
+                    
+                });
+            }];
+            
             
         } else {
             PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
@@ -70,17 +107,36 @@
                 if (error) {
                     NSLog(@"error message: %@", error);
                 } else {
+                    
+                    
                     [object setObject:self.activityNameField.text forKey:@"activityName"];
                     [object setObject:self.linkField.text forKey:@"linkField"];
                     [object setObject:self.locationField.text forKey:@"locationField"];
                     [object setObject:self.phoneNumberField.text forKey:@"phoneNumberField"];
                     [object setObject:self.descriptionField.text forKey:@"descriptionField"];
-
-                    [object save];                }
+                    PFFile *tempImage = [self.imageObject objectForKey:@"activityImage"];
+                    [object setObject:tempImage forKey:@"activityImage"];
+                    
+                    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            if (error) {
+                                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Activity failed to save." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                [alertView show];
+                            } else {
+                                NSLog(@"Existing activity saved");
+                                if (self.backgroundSaveCompletionHandler) {
+                                    self.backgroundSaveCompletionHandler();
+                                }
+                            }
+                            
+                            
+                        });
+                    }];
+                }
             }];
         }
         [self.navigationController popViewControllerAnimated:YES];
-
+        
         
     }
 }
@@ -88,6 +144,7 @@
 #pragma mark - Camera methods
 
 - (IBAction)imageButtonWasPressed:(id)sender {
+    self.activityImageButton.imageView.image = nil;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         [self promptForSource];
     } else {
@@ -130,6 +187,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [self.activityImageButton setImage:image forState:UIControlStateNormal];
     
     //compress image for uploading
     UIImage *resizedImage = [self resizeImage:image toWidth:320.0f andHeight:480.0f];
@@ -139,30 +197,29 @@
     
     PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, error.userInfo);
-        } else {
-            NSLog(@"imageFile successfully saved");
-            [self.activity setObject:imageFile forKey:@"activityImage"];
-            [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (error) {
-                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"An error occurred!" message:@"Please try taking another picture." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    [alertView show];
-                } else {
-                    NSLog(@"activity saved successfully");
-                }
-            }];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.activity) {
+                [self.activity setObject:imageFile forKey:@"activityImage"];
+                [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    });
+
+                }];
+            } else {
+                [PFObject objectWithClassName:@"TempObject"];
+                [self.imageObject setObject:imageFile forKey:@"activityImage"];
+                [self.imageObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    });
+                }];
+            }
+            
+        });
     }];
-    
-    
-    
-    
-    
-    
-    [self.activity saveInBackground];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

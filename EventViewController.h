@@ -11,8 +11,9 @@
 
 @interface EventViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *activityImage;
+@property (weak, nonatomic) IBOutlet UIButton *activityImageButton;
 
+@property (copy, nonatomic) void (^backgroundSaveCompletionHandler)(void);
 
 @property (weak, nonatomic) IBOutlet UITextField *activityNameField;
 @property (strong, nonatomic)NSString *activityNameText;
@@ -29,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionField;
 @property (strong, nonatomic)NSString *descriptionFieldText;
 @property (strong, nonatomic)PFObject *activity;
+
+@property (strong, nonatomic)PFObject *imageObject;
 
 - (IBAction)saveActivity:(id)sender;
 
