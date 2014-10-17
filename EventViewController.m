@@ -45,7 +45,7 @@
             PFFile *imageFile = [activity objectForKey:@"activityImage"];
             NSURL *imageFileUrl = [[NSURL alloc]initWithString:imageFile.url];
             NSData *imageDataFromURL = [NSData dataWithContentsOfURL:imageFileUrl];
-            self.activityImageButton.imageView.image = [UIImage imageWithData:imageDataFromURL];
+            [self.activityImageButton setImage:[UIImage imageWithData:imageDataFromURL] forState:UIControlStateNormal] ;
             
             
         }
@@ -82,7 +82,10 @@
             [activity setObject:self.phoneNumberField.text forKey:@"phoneNumberField"];
             [activity setObject:self.descriptionField.text forKey:@"descriptionField"];
             PFFile *tempImage = [self.imageObject objectForKey:@"activityImage"];
-            [activity setObject:tempImage forKey:@"activityImage"];
+            if (tempImage != nil) {
+                [activity setObject:tempImage forKey:@"activityImage"];
+
+            }
             
             [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
