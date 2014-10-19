@@ -58,7 +58,8 @@
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 [alertView show];
             } else {
-                [self.navigationController popViewControllerAnimated:YES];
+                NSLog(@"login successful");
+                [self.navigationController popToRootViewControllerAnimated:YES];
             }
             
         }];
