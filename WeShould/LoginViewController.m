@@ -44,6 +44,7 @@
 */
 
 - (IBAction)login:(id)sender {
+    
     NSLog(@"login button pressed");
     NSString *username = [self.usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];;
