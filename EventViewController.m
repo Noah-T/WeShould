@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.activityImageButton.imageView.image = [UIImage imageNamed:@"monkey"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -139,8 +138,6 @@
             }];
         }
         [self.navigationController popViewControllerAnimated:YES];
-        
-        
     }
 }
 
@@ -189,6 +186,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    NSLog(@"finish was fired");
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self.activityImageButton setImage:image forState:UIControlStateNormal];
     
@@ -211,11 +209,10 @@
                     
                 }];
             } else {
-                [PFObject objectWithClassName:@"TempObject"];
+                self.imageObject = [PFObject objectWithClassName:@"TempObject"];
                 [self.imageObject setObject:imageFile forKey:@"activityImage"];
                 [self.imageObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        
                         [self dismissViewControllerAnimated:YES completion:nil];
                     });
                 }];

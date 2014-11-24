@@ -10,4 +10,6 @@
 
 @interface ActivitiesTableViewController : UITableViewController
 
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 @end

@@ -22,35 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(updatePage) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
-    [query whereKeyExists:@"activityName"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, error.userInfo );
-        } else {
-            self.activitiesArray = [NSMutableArray arrayWithArray:objects];
-
-            [self.tableView reloadData];
-        }
-    }];
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        //user is logged in
-       
-        
-    }
-    else {
-         [self performSegueWithIdentifier:@"showLogin" sender:self];
-    }
-
-   
-
+    [self updatePage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,9 +62,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *activity = [self.activitiesArray objectAtIndex:indexPath.row];
     
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
     
     cell.textLabel.text =  [activity objectForKey:@"activityName"];
     // Configure the cell...
@@ -137,7 +115,6 @@
     if ([segue.identifier isEqualToString:@"ExistingActivitySegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        
         PFObject *activity = [self.activitiesArray objectAtIndex:indexPath.row];
         
         EventViewController *destinationController = (EventViewController*)segue.destinationViewController;
@@ -156,11 +133,6 @@
         destinationController.locationFieldText = [activity objectForKey:@"locationField"];
         destinationController.phoneNumberFieldText = [activity objectForKey:@"phoneNumberField"];
         destinationController.descriptionFieldText = [activity objectForKey:@"descriptionField"];
-        
-        
-        
-        
-        
     }
 }
 
@@ -168,5 +140,33 @@
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
     [self performSegueWithIdentifier:@"showLogin" sender:self];
+}
+
+- (void)updatePage
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+    [query whereKeyExists:@"activityName"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, error.userInfo );
+        } else {
+            self.activitiesArray = [NSMutableArray arrayWithArray:objects];
+            
+            [self.tableView reloadData];
+        }
+    }];
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        //user is logged in
+    }
+    else {
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
+    
+    if ([self.refreshControl isRefreshing]) {
+        [self.refreshControl endRefreshing];
+    }
+
+
 }
 @end
