@@ -93,7 +93,7 @@
                     NSLog(@"error message: %@", error);
                 } else {
                     object[@"activityName"] = self.activityNameField.text;
-                    [object setObject:@"999" forKey:@"linkField"];
+                    [object setObject:self.linkField.text forKey:@"linkField"];
                     [object setObject:self.locationField.text forKey:@"locationField"];
                     [object setObject:self.phoneNumberField.text forKey:@"phoneNumberField"];
                     [object setObject:self.descriptionField.text forKey:@"descriptionField"];
@@ -125,7 +125,7 @@
                 }
             }];
         }
-        //[self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
