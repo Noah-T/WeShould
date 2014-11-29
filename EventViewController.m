@@ -8,6 +8,7 @@
 
 #import "EventViewController.h"
 #import <Parse/Parse.h>
+#import "MBProgressHUD.h"
 
 
 @interface EventViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -25,7 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     
     if (self.activity != nil) {
         
@@ -39,12 +40,18 @@
         PFQuery *imageQuery = [PFQuery queryWithClassName:@"Activity"];
         
         [imageQuery getObjectInBackgroundWithId:self.activity.objectId block:^(PFObject *object, NSError *error) {
+            
             if ([object objectForKey:@"activityImage"]) {
                 PFFile *imageFile = [object objectForKey:@"activityImage"];
                 NSURL *imageFileUrl = [[NSURL alloc]initWithString:imageFile.url];
                 NSData *imageDataFromURL = [NSData dataWithContentsOfURL:imageFileUrl];
-                [self.activityImageButton setImage:[UIImage imageWithData:imageDataFromURL] forState:UIControlStateNormal] ;
+                [self.activityImageButton setImage:[UIImage imageWithData:imageDataFromURL] forState:UIControlStateNormal];
             }
+            //                dispatch_async(dispatch_get_main_queue(), ^{
+            //                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+            //                });
+            
+            
             
         }];
         
@@ -69,7 +76,7 @@
             PFFile *tempImage = [self.imageObject objectForKey:@"activityImage"];
             if (self.imageObject) {
                 [activity setObject:tempImage forKey:@"activityImage"];
-            }             
+            }
             [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (!succeeded) {
@@ -78,10 +85,11 @@
                     } else {
                         NSLog(@"New activity saved");
                         if (self.backgroundSaveCompletionHandler) {
-
+                            
                             self.backgroundSaveCompletionHandler();
                         }
-                    }   
+                    }
+                    [self.navigationController popViewControllerAnimated:YES];
                 });
             }];
             
@@ -92,40 +100,51 @@
                 if (error) {
                     NSLog(@"error message: %@", error);
                 } else {
-                    object[@"activityName"] = self.activityNameField.text;
-                    [object setObject:self.linkField.text forKey:@"linkField"];
-                    [object setObject:self.locationField.text forKey:@"locationField"];
-                    [object setObject:self.phoneNumberField.text forKey:@"phoneNumberField"];
-                    [object setObject:self.descriptionField.text forKey:@"descriptionField"];
-                    NSLog(@"hey there");
-
-                    if (!object[@"activityImage"]) {
-                        PFFile *tempImage = [self.imageObject objectForKey:@"activityImage"];
-                        [object setObject:tempImage forKey:@"activityImage"];
-                    }
-                    NSLog(@"this is right before the save");
-                    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        NSLog(@"save succeeded!");
-                        NSLog(@"error: %@", error);
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            if (error) {
-                                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Activity failed to save." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                                [alertView show];
-                            } else {
-                                NSLog(@"successful save");
-                                if (self.backgroundSaveCompletionHandler) {
-                                    self.backgroundSaveCompletionHandler();
-                                    NSLog(@"refresh");
+                    
+                    if (object) {
+                        object[@"activityName"] = self.activityNameField.text;
+                        [object setObject:self.linkField.text forKey:@"linkField"];
+                        [object setObject:self.locationField.text forKey:@"locationField"];
+                        [object setObject:self.phoneNumberField.text forKey:@"phoneNumberField"];
+                        [object setObject:self.descriptionField.text forKey:@"descriptionField"];
+                        
+                        
+                        NSLog(@"activity image value is: %@", object[@"activityImage"]);
+                        NSLog(@"activity image checker called");
+                        
+                        
+                        
+                        NSLog(@"this is right before the save");
+                        [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            NSLog(@"save succeeded!");
+                            NSLog(@"error: %@", error);
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                if (!succeeded) {
+                                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Activity failed to save." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                                    [alertView show];
+                                } else {
+                                    NSLog(@"successful save");
+                                    if (self.backgroundSaveCompletionHandler) {
+                                        self.backgroundSaveCompletionHandler();
+                                        NSLog(@"refresh");
+                                    }
+                                    
+                                    [self.navigationController popViewControllerAnimated:YES];
+                                    
                                 }
-                            }
-                            
-                            
-                        });
-                    }];
+                                
+                                
+                                
+                            });
+                        }];
+                    }
+                    ////////////////////
+                    
                 }
+                
             }];
         }
-        [self.navigationController popViewControllerAnimated:YES];
+        
     }
 }
 
