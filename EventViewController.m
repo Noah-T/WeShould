@@ -123,28 +123,19 @@
                                     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Activity failed to save." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                                     [alertView show];
                                 } else {
-                                    NSLog(@"successful save");
+                                    
                                     if (self.backgroundSaveCompletionHandler) {
                                         self.backgroundSaveCompletionHandler();
-                                        NSLog(@"refresh");
                                     }
-                                    
                                     [self.navigationController popViewControllerAnimated:YES];
-                                    
                                 }
-                                
-                                
-                                
                             });
                         }];
                     }
-                    ////////////////////
-                    
                 }
                 
             }];
         }
-        
     }
 }
 
@@ -212,8 +203,7 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
                         [self dismissViewControllerAnimated:YES completion:nil];
-                    });
-                    
+                    });  
                 }];
             } else {
                 self.imageObject = [PFObject objectWithClassName:@"TempObject"];

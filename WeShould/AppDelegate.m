@@ -52,11 +52,14 @@
 }
 
 - (void)customizeAppearance {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.557 green:0.675 blue:0.788 alpha:1]];
+    
+    UIColor *customBlueColor = [UIColor colorWithRed:0.557 green:0.675 blue:0.788 alpha:1];
+    [[UINavigationBar appearance] setBarTintColor:customBlueColor];
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    [[UISearchBar appearance]setBarTintColor:customBlueColor];
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil]];
     [[UITabBar appearance]setTintColor:[UIColor whiteColor]];
-    [[UITabBar appearance]setBarTintColor:[UIColor colorWithRed:0.557 green:0.675 blue:0.788 alpha:1]];
+    [[UITabBar appearance]setBarTintColor:customBlueColor];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication]setStatusBarHidden:NO];
     

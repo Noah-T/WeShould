@@ -20,6 +20,7 @@
 		DED1AD5A19E345B300F2F082 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED1AD5919E345B300F2F082 /* Images.xcassets */; };
 		DED1AD5D19E345B300F2F082 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED1AD5B19E345B300F2F082 /* LaunchScreen.xib */; };
 		DED1AD6919E345B300F2F082 /* WeShouldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DED1AD6819E345B300F2F082 /* WeShouldTests.m */; };
+		DEDA0AF41A2A5A230092D433 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA0AF31A2A5A230092D433 /* FriendsViewController.m */; };
 		DEDA65AC19E34E51006B18F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65AB19E34E51006B18F4 /* AudioToolbox.framework */; };
 		DEDA65AE19E34E5C006B18F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65AD19E34E5C006B18F4 /* CFNetwork.framework */; };
 		DEDA65B019E34E65006B18F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDA65AF19E34E65006B18F4 /* CoreGraphics.framework */; };
@@ -71,6 +72,8 @@
 		DED1AD6219E345B300F2F082 /* WeShouldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeShouldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED1AD6719E345B300F2F082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED1AD6819E345B300F2F082 /* WeShouldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeShouldTests.m; sourceTree = "<group>"; };
+		DEDA0AF21A2A5A230092D433 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsViewController.h; path = ../FriendsViewController.h; sourceTree = "<group>"; };
+		DEDA0AF31A2A5A230092D433 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsViewController.m; path = ../FriendsViewController.m; sourceTree = "<group>"; };
 		DEDA65AB19E34E51006B18F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DEDA65AD19E34E5C006B18F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DEDA65AF19E34E65006B18F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,20 +171,22 @@
 		DED1AD4B19E345B300F2F082 /* WeShould */ = {
 			isa = PBXGroup;
 			children = (
-				DE68174C19ECBBB400AC6671 /* EventViewController.h */,
-				DE68174D19ECBBB400AC6671 /* EventViewController.m */,
-				DE6F217319EC5EF30039DE0E /* TemplateIcon2x.png */,
-				DED1AD5019E345B300F2F082 /* AppDelegate.h */,
-				DED1AD5119E345B300F2F082 /* AppDelegate.m */,
 				DEDA65C319E35016006B18F4 /* ActivitiesTableViewController.h */,
 				DEDA65C419E35016006B18F4 /* ActivitiesTableViewController.m */,
+				DED1AD5019E345B300F2F082 /* AppDelegate.h */,
+				DED1AD5119E345B300F2F082 /* AppDelegate.m */,
+				DE68174C19ECBBB400AC6671 /* EventViewController.h */,
+				DE68174D19ECBBB400AC6671 /* EventViewController.m */,
+				DEDA0AF21A2A5A230092D433 /* FriendsViewController.h */,
+				DEDA0AF31A2A5A230092D433 /* FriendsViewController.m */,
+				DED1AD5919E345B300F2F082 /* Images.xcassets */,
+				DED1AD5B19E345B300F2F082 /* LaunchScreen.xib */,
 				DE770CCF19E7998E00195F9C /* LoginViewController.h */,
 				DE770CD019E7998E00195F9C /* LoginViewController.m */,
 				DE770CD219E7999900195F9C /* SignupViewController.h */,
 				DE770CD319E7999900195F9C /* SignupViewController.m */,
-				DED1AD5919E345B300F2F082 /* Images.xcassets */,
-				DED1AD5B19E345B300F2F082 /* LaunchScreen.xib */,
 				DED1AD4C19E345B300F2F082 /* Supporting Files */,
+				DE6F217319EC5EF30039DE0E /* TemplateIcon2x.png */,
 			);
 			path = WeShould;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			files = (
 				DE770CD119E7998E00195F9C /* LoginViewController.m in Sources */,
 				DED1AD5219E345B300F2F082 /* AppDelegate.m in Sources */,
+				DEDA0AF41A2A5A230092D433 /* FriendsViewController.m in Sources */,
 				DEDA65C519E35016006B18F4 /* ActivitiesTableViewController.m in Sources */,
 				DED1AD4F19E345B300F2F082 /* main.m in Sources */,
 				DE770CD419E7999900195F9C /* SignupViewController.m in Sources */,
