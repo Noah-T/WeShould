@@ -1393,9 +1393,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="551" width="368" height="0.0"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="aN8-zv-yf5" id="1Qe-ae-Koe"/>
                                     <outlet property="delegate" destination="aN8-zv-yf5" id="PfX-p3-OcE"/>
@@ -1418,10 +1415,10 @@
                                 <exclude reference="5Iy-K9-K89"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WwQ-BU-hrF"/>
                                 <exclude reference="F4b-Hu-r5S"/>
                                 <exclude reference="Suc-4m-463"/>
                                 <exclude reference="iJA-Gq-Bbx"/>
-                                <exclude reference="WwQ-BU-hrF"/>
                                 <exclude reference="UY5-o5-jDa"/>
                                 <exclude reference="XnU-Ue-eEr"/>
                                 <exclude reference="npa-lr-cgy"/>
@@ -1433,10 +1430,10 @@
                                 <include reference="5Iy-K9-K89"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WwQ-BU-hrF"/>
                                 <include reference="F4b-Hu-r5S"/>
                                 <include reference="Suc-4m-463"/>
                                 <include reference="iJA-Gq-Bbx"/>
-                                <include reference="WwQ-BU-hrF"/>
                                 <include reference="UY5-o5-jDa"/>
                                 <include reference="XnU-Ue-eEr"/>
                                 <include reference="npa-lr-cgy"/>

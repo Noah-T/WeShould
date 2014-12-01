@@ -27,16 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
 
@@ -49,16 +39,13 @@
         if (error) {
             NSLog(@"error: %@", error.description);
         }
-        NSLog(@"found objects:\n %@", objects);
         if (objects.count > 0) {
             
             for (PFUser *user in objects) {
                 [self.searchResults addObject:user];
             }
         }
-        NSLog(@"self.searchresults is: %@", self.searchResults[0]);
         [self.tableView reloadData];
-
     }];
 }
 
@@ -69,10 +56,15 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIImage *accessoryButtonImage = [UIImage imageNamed:@"plus"];
+    UIButton *accessoryButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [accessoryButton setBackgroundImage:accessoryButtonImage forState:UIControlStateNormal];
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     PFUser *user = [self.searchResults objectAtIndex:indexPath.row];
     NSLog(@"username: \n\n\n\n %@", user.username);
     cell.textLabel.text = user.username;
+    cell.accessoryView = accessoryButton;
+
     return cell;
 }
 

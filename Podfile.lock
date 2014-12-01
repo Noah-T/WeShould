@@ -1,13 +1,16 @@
 PODS:
   - MBProgressHUD (0.9)
+  - MSCellAccessory (1.1.2)
   - TPKeyboardAvoiding (1.2.4)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 0.8)
+  - MSCellAccessory
   - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  MSCellAccessory: 5f5b839e14bbd5de6c3dacb4b0d3ae5a63741778
   TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
 
 COCOAPODS: 0.34.4
