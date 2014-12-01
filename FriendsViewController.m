@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface FriendsViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSMutableArray *searchResults;
 @end
@@ -38,7 +39,10 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    NSLog(@"searchBar text is: %@", searchBar.text);
+
+
+        self.searchResults = [NSMutableArray array];
+    
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:searchBar.text];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -46,6 +50,15 @@
             NSLog(@"error: %@", error.description);
         }
         NSLog(@"found objects:\n %@", objects);
+        if (objects.count > 0) {
+            
+            for (PFUser *user in objects) {
+                [self.searchResults addObject:user];
+            }
+        }
+        NSLog(@"self.searchresults is: %@", self.searchResults[0]);
+        [self.tableView reloadData];
+
     }];
 }
 
@@ -54,10 +67,13 @@
     return self.searchResults.count;
 }
 
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    return cell;
-//}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    PFUser *user = [self.searchResults objectAtIndex:indexPath.row];
+    NSLog(@"username: \n\n\n\n %@", user.username);
+    cell.textLabel.text = user.username;
+    return cell;
+}
 
 @end

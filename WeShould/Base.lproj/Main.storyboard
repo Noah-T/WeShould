@@ -1371,14 +1371,12 @@
                         <viewControllerLayoutGuide type="bottom" id="sRM-i9-cYy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7tT-nQ-lzD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dKl-8m-uKD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="44"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="aN8-zv-yf5" id="TWa-EZ-Tqb"/>
                                 </connections>
@@ -1386,16 +1384,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Iy-K9-K89">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Hln-fd-ZcJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hln-fd-ZcJ" id="NCb-Gh-ynQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="16" y="551" width="368" height="0.0"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="aN8-zv-yf5" id="1Qe-ae-Koe"/>
+                                    <outlet property="delegate" destination="aN8-zv-yf5" id="PfX-p3-OcE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dKl-8m-uKD" firstAttribute="top" secondItem="74N-gx-3oe" secondAttribute="bottom" id="F4b-Hu-r5S"/>
+                            <constraint firstItem="dKl-8m-uKD" firstAttribute="leading" secondItem="7tT-nQ-lzD" secondAttribute="leadingMargin" constant="-16" id="Suc-4m-463"/>
                             <constraint firstItem="5Iy-K9-K89" firstAttribute="leading" secondItem="7tT-nQ-lzD" secondAttribute="leadingMargin" id="UY5-o5-jDa"/>
                             <constraint firstItem="sRM-i9-cYy" firstAttribute="top" secondItem="5Iy-K9-K89" secondAttribute="bottom" id="WwQ-BU-hrF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Iy-K9-K89" secondAttribute="trailing" id="XnU-Ue-eEr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dKl-8m-uKD" secondAttribute="trailing" constant="-16" id="iJA-Gq-Bbx"/>
                             <constraint firstItem="5Iy-K9-K89" firstAttribute="top" secondItem="dKl-8m-uKD" secondAttribute="bottom" id="npa-lr-cgy"/>
                         </constraints>
                         <variation key="default">
@@ -1404,10 +1418,13 @@
                                 <exclude reference="5Iy-K9-K89"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="F4b-Hu-r5S"/>
+                                <exclude reference="Suc-4m-463"/>
+                                <exclude reference="iJA-Gq-Bbx"/>
+                                <exclude reference="WwQ-BU-hrF"/>
                                 <exclude reference="UY5-o5-jDa"/>
                                 <exclude reference="XnU-Ue-eEr"/>
                                 <exclude reference="npa-lr-cgy"/>
-                                <exclude reference="WwQ-BU-hrF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1416,14 +1433,20 @@
                                 <include reference="5Iy-K9-K89"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="F4b-Hu-r5S"/>
+                                <include reference="Suc-4m-463"/>
+                                <include reference="iJA-Gq-Bbx"/>
+                                <include reference="WwQ-BU-hrF"/>
                                 <include reference="UY5-o5-jDa"/>
                                 <include reference="XnU-Ue-eEr"/>
                                 <include reference="npa-lr-cgy"/>
-                                <include reference="WwQ-BU-hrF"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="i71-Gx-sX3"/>
+                    <connections>
+                        <outlet property="tableView" destination="5Iy-K9-K89" id="OX0-NT-PPJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7b-rt-rjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
