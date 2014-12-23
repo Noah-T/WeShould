@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C68m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vhu-kQ-UzE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vhu-kQ-UzE">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1398,14 +1398,46 @@
                                     <outlet property="delegate" destination="aN8-zv-yf5" id="PfX-p3-OcE"/>
                                 </connections>
                             </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-8I-6se">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="requestCell" id="kIL-pS-fJM">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kIL-pS-fJM" id="kt9-Bw-0gz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aN8-zv-yf5" id="hO2-ca-b54"/>
+                                    <outlet property="delegate" destination="aN8-zv-yf5" id="rks-Tz-UX8"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Requests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqR-wD-0TB">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bzk-8I-6se" firstAttribute="top" secondItem="RqR-wD-0TB" secondAttribute="bottom" constant="8" id="85e-MB-ejO"/>
+                            <constraint firstItem="RqR-wD-0TB" firstAttribute="leading" secondItem="7tT-nQ-lzD" secondAttribute="leadingMargin" id="8jg-Px-sbx"/>
                             <constraint firstItem="dKl-8m-uKD" firstAttribute="top" secondItem="74N-gx-3oe" secondAttribute="bottom" id="F4b-Hu-r5S"/>
+                            <constraint firstItem="sRM-i9-cYy" firstAttribute="top" secondItem="bzk-8I-6se" secondAttribute="bottom" constant="8" id="KUJ-C9-XPJ"/>
+                            <constraint firstItem="bzk-8I-6se" firstAttribute="leading" secondItem="7tT-nQ-lzD" secondAttribute="leadingMargin" id="NPF-zb-7Ln"/>
+                            <constraint firstItem="bzk-8I-6se" firstAttribute="top" secondItem="RqR-wD-0TB" secondAttribute="bottom" constant="8" id="QLh-mn-bBt"/>
                             <constraint firstItem="dKl-8m-uKD" firstAttribute="leading" secondItem="7tT-nQ-lzD" secondAttribute="leadingMargin" constant="-16" id="Suc-4m-463"/>
                             <constraint firstItem="5Iy-K9-K89" firstAttribute="leading" secondItem="7tT-nQ-lzD" secondAttribute="leadingMargin" id="UY5-o5-jDa"/>
-                            <constraint firstItem="sRM-i9-cYy" firstAttribute="top" secondItem="5Iy-K9-K89" secondAttribute="bottom" id="WwQ-BU-hrF"/>
+                            <constraint firstItem="sRM-i9-cYy" firstAttribute="top" secondItem="5Iy-K9-K89" secondAttribute="bottom" id="WwQ-BU-hrF">
+                                <variation key="widthClass=compact" constant="199"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="5Iy-K9-K89" secondAttribute="trailing" id="XnU-Ue-eEr"/>
+                            <constraint firstItem="RqR-wD-0TB" firstAttribute="top" secondItem="5Iy-K9-K89" secondAttribute="bottom" constant="8" id="bKX-sa-xbb"/>
+                            <constraint firstItem="bzk-8I-6se" firstAttribute="trailing" secondItem="7tT-nQ-lzD" secondAttribute="trailingMargin" id="cgY-zI-bdl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dKl-8m-uKD" secondAttribute="trailing" constant="-16" id="iJA-Gq-Bbx"/>
                             <constraint firstItem="5Iy-K9-K89" firstAttribute="top" secondItem="dKl-8m-uKD" secondAttribute="bottom" id="npa-lr-cgy"/>
                         </constraints>
@@ -1413,35 +1445,54 @@
                             <mask key="subviews">
                                 <exclude reference="dKl-8m-uKD"/>
                                 <exclude reference="5Iy-K9-K89"/>
+                                <exclude reference="bzk-8I-6se"/>
+                                <exclude reference="RqR-wD-0TB"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="WwQ-BU-hrF"/>
                                 <exclude reference="F4b-Hu-r5S"/>
                                 <exclude reference="Suc-4m-463"/>
                                 <exclude reference="iJA-Gq-Bbx"/>
                                 <exclude reference="UY5-o5-jDa"/>
                                 <exclude reference="XnU-Ue-eEr"/>
                                 <exclude reference="npa-lr-cgy"/>
+                                <exclude reference="85e-MB-ejO"/>
+                                <exclude reference="NPF-zb-7Ln"/>
+                                <exclude reference="QLh-mn-bBt"/>
+                                <exclude reference="cgY-zI-bdl"/>
+                                <exclude reference="8jg-Px-sbx"/>
+                                <exclude reference="bKX-sa-xbb"/>
+                                <exclude reference="KUJ-C9-XPJ"/>
+                                <exclude reference="WwQ-BU-hrF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="dKl-8m-uKD"/>
                                 <include reference="5Iy-K9-K89"/>
+                                <include reference="bzk-8I-6se"/>
+                                <include reference="RqR-wD-0TB"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="WwQ-BU-hrF"/>
                                 <include reference="F4b-Hu-r5S"/>
                                 <include reference="Suc-4m-463"/>
                                 <include reference="iJA-Gq-Bbx"/>
                                 <include reference="UY5-o5-jDa"/>
                                 <include reference="XnU-Ue-eEr"/>
                                 <include reference="npa-lr-cgy"/>
+                                <include reference="85e-MB-ejO"/>
+                                <include reference="NPF-zb-7Ln"/>
+                                <exclude reference="QLh-mn-bBt"/>
+                                <include reference="cgY-zI-bdl"/>
+                                <include reference="8jg-Px-sbx"/>
+                                <include reference="bKX-sa-xbb"/>
+                                <include reference="KUJ-C9-XPJ"/>
+                                <include reference="WwQ-BU-hrF"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="i71-Gx-sX3"/>
                     <connections>
+                        <outlet property="friendRequestTableView" destination="bzk-8I-6se" id="mOH-sc-Ls8"/>
                         <outlet property="tableView" destination="5Iy-K9-K89" id="OX0-NT-PPJ"/>
                     </connections>
                 </viewController>
