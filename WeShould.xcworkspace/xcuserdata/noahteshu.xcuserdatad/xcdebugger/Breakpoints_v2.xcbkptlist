@@ -93,7 +93,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke189"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.201783"
+                  timestampString = "441081608.677389"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "212"
@@ -107,7 +107,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_2190"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.201878"
+                  timestampString = "441081608.677518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "212"
@@ -187,7 +187,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_3"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.202751"
+                  timestampString = "441081608.688466"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "207"
@@ -201,7 +201,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_3"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.202844"
+                  timestampString = "441081608.688629"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "207"
@@ -233,7 +233,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_2"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.203366"
+                  timestampString = "441081608.689714"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "211"
@@ -247,7 +247,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke189"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.203466"
+                  timestampString = "441081608.689822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "211"
@@ -785,7 +785,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_2"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.308605"
+                  timestampString = "441081608.695303"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "202"
@@ -799,7 +799,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_3"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.308693"
+                  timestampString = "441081608.695399"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "202"
@@ -831,7 +831,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_3"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.309193"
+                  timestampString = "441081608.69592"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "203"
@@ -845,7 +845,7 @@
                   symbolName = "__75-[EventViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke_4"
                   moduleName = "WeShould"
                   urlString = "file:///Users/noahteshu/Documents/Development/iOS/WeShould/EventViewController.m"
-                  timestampString = "441066779.309294"
+                  timestampString = "441081608.696014"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "203"
@@ -988,39 +988,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-searchBarSearchButtonClicked:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-searchBarSearchButtonClicked:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -1036,23 +1004,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "-searchBarSearchButtonClicked:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -1068,7 +1020,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-searchBarSearchButtonClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendsViewController.m"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -1084,7 +1052,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-searchBarSearchButtonClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendsViewController.m"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -1100,7 +1084,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -1116,11 +1100,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-searchBarSearchButtonClicked:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendsViewController.m"
+            timestampString = "441072170.649532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-searchBarSearchButtonClicked:"
             landmarkType = "5">
             <Locations>
@@ -1162,11 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "-searchBarSearchButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1178,11 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-addOrRemoveFriend:event:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1194,11 +1194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1210,23 +1210,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -1242,11 +1226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1258,7 +1242,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
@@ -1274,7 +1258,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -1290,11 +1274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1306,12 +1290,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FriendsViewController.m"
-            timestampString = "441066714.339283"
+            timestampString = "441072170.649532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendsViewController.m"
+            timestampString = "441072170.649532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendsViewController.m"
+            timestampString = "441080002.379159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FriendsViewController.m"
+            timestampString = "441080002.379159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "WeShould": {
+            "applicationId": "HLh6vGMEIITwBefYZUQ2b6K1uvrzrBEw459Qe0iE", 
+            "masterKey": "8q89qJP3G1gDBx9QKo5EaJwSL06XgolcCTZJQGep"
+        }, 
+        "_default": {
+            "link": "WeShould"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.2"
+    }
+}

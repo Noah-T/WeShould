@@ -23,7 +23,15 @@
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:YES];
     [self.tabBarController.tabBar setHidden:YES];
+
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.tabBarController.hidesBottomBarWhenPushed = NO;
+
 }
 
 

@@ -24,16 +24,20 @@
     [super viewDidLoad];
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.refreshControl addTarget:self action:@selector(updatePage) forControlEvents:UIControlEventValueChanged];
-    
+    self.tabBarController.hidesBottomBarWhenPushed = NO;
 
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self updatePage];
-    NSLog(@"tab bar controller is: %@", self.tabBarController);
+    self.tabBarController.tabBar.hidden = NO;
+
+    //NSLog(@"tab bar controller is: %d", self.tabBarController.tabBar.hidden);
 }
 
 - (void)didReceiveMemoryWarning {

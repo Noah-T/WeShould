@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.currentUser = [PFUser currentUser];
-
+    
     NSLog(@"tab bar controller is: %@", self.tabBarController);
     
 }
@@ -35,20 +35,21 @@
     PFQuery *pendingRequestsQuery = [PFQuery queryWithClassName:@"FriendRequest" ];
     [pendingRequestsQuery whereKey:@"to" equalTo:self.currentUser];
     [pendingRequestsQuery whereKey:@"status" equalTo:@"pending"];
+    [pendingRequestsQuery includeKey:@"from.user.username"];
     [pendingRequestsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            
+            NSLog(@"objects: %@", objects);
             self.pendingFriendRequests = objects;
-//            for (PFObject *friendRequest in <#collection#>) {
-//                <#statements#>
-//            }
-
+            //            for (PFObject *friendRequest in <#collection#>) {
+            //                <#statements#>
+            //            }
+            
             
             dispatch_async(dispatch_get_main_queue(), ^(void){
                 NSLog(@"search results: %lu", (unsigned long)objects.count);
                 [self.friendRequestTableView reloadData];
                 NSLog(@"this is past the reloadData call");
-
+                
             });
         } else {
             NSLog(@"%@", error.description);
@@ -63,9 +64,9 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-
-
-        self.searchResults = [NSMutableArray array];
+    
+    
+    self.searchResults = [NSMutableArray array];
     
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:searchBar.text];
@@ -108,18 +109,18 @@
     } else if(tableView == self.friendRequestTableView) {
         //add pending friend requests here
         NSLog(@"HELLO THERE");
-
+        
         PFObject *FriendRequest = [self.pendingFriendRequests objectAtIndex:indexPath.row];
         PFUser *userWhoSentFriendRequest = FriendRequest[@"from"];
         NSLog(@"userwhosentrequest: %@", userWhoSentFriendRequest);
         
         UITableViewCell *cell = [self.friendRequestTableView dequeueReusableCellWithIdentifier:@"requestCell" forIndexPath:indexPath];
-        cell.textLabel.text = userWhoSentFriendRequest.objectId;
+        cell.textLabel.text = userWhoSentFriendRequest.username;
         
         return cell;
     }
     
-
+    
     return false;
 }
 
@@ -147,7 +148,7 @@
                 NSLog(@"error: %@", error);
             }
         }];
-
+        
     }
     
 }
@@ -172,7 +173,26 @@
                 [alert show];
             }
         }];
-
+        
+    } else {
+        PFObject *friendRequest = [self.pendingFriendRequests objectAtIndex:indexPath.row];
+        PFUser *fromUser = [friendRequest objectForKey:@"from"];
+        [PFCloud callFunctionInBackground:@"addFriendToFriendsRelation" withParameters:@{@"friendRequest": friendRequest.objectId} block:^(id object, NSError *error) {
+            if (!error) {
+                
+                PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+                [friendsRelation addObject:fromUser];
+                
+                [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!succeeded) {
+                        NSLog(@"error: %@", error.description);
+                    }
+                }];
+                
+            } else {
+                NSLog(@"error: %@", error.description);
+            }
+        }];   
     }
     
 }

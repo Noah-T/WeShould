@@ -63,6 +63,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="aXj-TW-b4T" kind="show" identifier="showLogin" id="9rV-du-VS4"/>
                     </connections>
@@ -1449,6 +1450,10 @@
                                 <exclude reference="RqR-wD-0TB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8jg-Px-sbx"/>
+                                <exclude reference="bKX-sa-xbb"/>
+                                <exclude reference="KUJ-C9-XPJ"/>
+                                <exclude reference="WwQ-BU-hrF"/>
                                 <exclude reference="F4b-Hu-r5S"/>
                                 <exclude reference="Suc-4m-463"/>
                                 <exclude reference="iJA-Gq-Bbx"/>
@@ -1459,10 +1464,6 @@
                                 <exclude reference="NPF-zb-7Ln"/>
                                 <exclude reference="QLh-mn-bBt"/>
                                 <exclude reference="cgY-zI-bdl"/>
-                                <exclude reference="8jg-Px-sbx"/>
-                                <exclude reference="bKX-sa-xbb"/>
-                                <exclude reference="KUJ-C9-XPJ"/>
-                                <exclude reference="WwQ-BU-hrF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1473,6 +1474,10 @@
                                 <include reference="RqR-wD-0TB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8jg-Px-sbx"/>
+                                <include reference="bKX-sa-xbb"/>
+                                <include reference="KUJ-C9-XPJ"/>
+                                <include reference="WwQ-BU-hrF"/>
                                 <include reference="F4b-Hu-r5S"/>
                                 <include reference="Suc-4m-463"/>
                                 <include reference="iJA-Gq-Bbx"/>
@@ -1483,10 +1488,6 @@
                                 <include reference="NPF-zb-7Ln"/>
                                 <exclude reference="QLh-mn-bBt"/>
                                 <include reference="cgY-zI-bdl"/>
-                                <include reference="8jg-Px-sbx"/>
-                                <include reference="bKX-sa-xbb"/>
-                                <include reference="KUJ-C9-XPJ"/>
-                                <include reference="WwQ-BU-hrF"/>
                             </mask>
                         </variation>
                     </view>
