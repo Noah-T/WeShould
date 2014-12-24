@@ -63,6 +63,7 @@
         //if all fields check out, create new user with passed in fields
         PFUser *newUser = [PFUser user];
         newUser.username = username;
+        [newUser setObject:newUser.username.lowercaseString forKey:@"lowercaseUsername"];
         newUser.password = password;
         newUser.email = email;
         

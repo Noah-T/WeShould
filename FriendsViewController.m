@@ -69,7 +69,7 @@
     self.searchResults = [NSMutableArray array];
     
     PFQuery *query = [PFUser query];
-    [query whereKey:@"username" equalTo:searchBar.text];
+    [query whereKey:@"lowercaseUsername" containsString:searchBar.text.lowercaseString];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"error: %@", error.description);
