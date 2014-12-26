@@ -31,31 +31,44 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    
     [super viewWillAppear:animated];
-    PFQuery *pendingRequestsQuery = [PFQuery queryWithClassName:@"FriendRequest" ];
-    [pendingRequestsQuery whereKey:@"to" equalTo:self.currentUser];
-    [pendingRequestsQuery whereKey:@"status" equalTo:@"pending"];
-    [pendingRequestsQuery includeKey:@"from.user.username"];
-    [pendingRequestsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"objects: %@", objects);
-            self.pendingFriendRequests = objects;
-            //            for (PFObject *friendRequest in <#collection#>) {
-            //                <#statements#>
-            //            }
-            
-            
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                NSLog(@"search results: %lu", (unsigned long)objects.count);
-                [self.friendRequestTableView reloadData];
-                NSLog(@"this is past the reloadData call");
+    self.tabBarController.tabBar.hidden = NO;
+    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        //user is logged in
+        PFQuery *pendingRequestsQuery = [PFQuery queryWithClassName:@"FriendRequest" ];
+        [pendingRequestsQuery whereKey:@"to" equalTo:self.currentUser];
+        [pendingRequestsQuery whereKey:@"status" equalTo:@"pending"];
+        [pendingRequestsQuery includeKey:@"from.user.username"];
+        [pendingRequestsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                NSLog(@"objects: %@", objects);
+                self.pendingFriendRequests = objects;
+                //            for (PFObject *friendRequest in <#collection#>) {
+                //                <#statements#>
+                //            }
                 
-            });
-        } else {
-            NSLog(@"%@", error.description);
-        }
-    }];
-}
+                
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    NSLog(@"search results: %lu", (unsigned long)objects.count);
+                    [self.friendRequestTableView reloadData];
+                    NSLog(@"this is past the reloadData call");
+                    
+                });
+            } else {
+                NSLog(@"%@", error.description);
+            }
+        }];
+
+    }
+    else {
+        [self performSegueWithIdentifier:@"showTheLogin" sender:self];
+    }
+
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -65,23 +78,27 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     
+    PFUser *currentUser = [PFUser currentUser];
     
-    self.searchResults = [NSMutableArray array];
-    
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"lowercaseUsername" containsString:searchBar.text.lowercaseString];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"error: %@", error.description);
-        }
-        if (objects.count > 0) {
-            
-            for (PFUser *user in objects) {
-                [self.searchResults addObject:user];
+    if (currentUser) {
+        self.searchResults = [NSMutableArray array];
+        
+        PFQuery *query = [PFUser query];
+        [query whereKey:@"lowercaseUsername" containsString:searchBar.text.lowercaseString];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"error: %@", error.description);
             }
-        }
-        [self.tableView reloadData];
-    }];
+            if (objects.count > 0) {
+                
+                for (PFUser *user in objects) {
+                    [self.searchResults addObject:user];
+                }
+            }
+            [self.tableView reloadData];
+        }];
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

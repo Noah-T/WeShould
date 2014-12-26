@@ -31,6 +31,8 @@
 {
     [super viewWillAppear:animated];
     self.tabBarController.hidesBottomBarWhenPushed = NO;
+    [self.tabBarController.tabBar setHidden:YES];
+
 
 }
 

@@ -11,15 +11,15 @@
         <scene sceneID="DDd-qh-YWT">
             <objects>
                 <tabBarController id="Vhu-kQ-UzE" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Wd1-QT-QyL">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Wd1-QT-QyL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wf0-iO-y6d" kind="relationship" relationship="viewControllers" id="LJW-VW-9Ax"/>
-                        <segue destination="05c-gn-DRt" kind="relationship" relationship="viewControllers" id="1MO-df-fvc"/>
+                        <segue destination="05c-gn-DRt" kind="relationship" relationship="viewControllers" id="obv-Td-Aek"/>
+                        <segue destination="wf0-iO-y6d" kind="relationship" relationship="viewControllers" id="I4a-kV-Cf0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bl-Zc-MTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,7 +261,8 @@
                                         <exclude reference="u3t-qe-XvZ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="64" width="368" height="492"/>
                                     <mask key="subviews">
                                         <include reference="uP5-zX-4Os"/>
                                         <include reference="Iz7-rd-Fc1"/>
@@ -347,7 +348,7 @@
                     </view>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityImageButton" destination="MYA-Lh-2jo" id="ZhG-f5-n39"/>
                         <outlet property="activityNameField" destination="3nk-cd-8ST" id="rR6-eo-0VN"/>
@@ -359,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYQ-ro-YhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="338"/>
+            <point key="canvasLocation" x="1731" y="342"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hh6-h7-VZd">
@@ -1495,19 +1496,19 @@
                     <connections>
                         <outlet property="friendRequestTableView" destination="bzk-8I-6se" id="mOH-sc-Ls8"/>
                         <outlet property="tableView" destination="5Iy-K9-K89" id="OX0-NT-PPJ"/>
+                        <segue destination="aXj-TW-b4T" kind="show" identifier="showTheLogin" id="YLW-MU-Yw3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7b-rt-rjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="824"/>
+            <point key="canvasLocation" x="684" y="1030"/>
         </scene>
         <!--Activities-->
         <scene sceneID="MBB-AB-Yi2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wf0-iO-y6d" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="wf0-iO-y6d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activities" id="EPX-ft-xwb"/>
                     <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ILt-93-xe6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1528,7 +1529,7 @@
         <image name="skydivers" width="583" height="735"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="YLW-MU-Yw3"/>
         <segue reference="lSl-tb-u12"/>
-        <segue reference="9rV-du-VS4"/>
     </inferredMetricsTieBreakers>
 </document>
