@@ -36,11 +36,12 @@
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
     
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
+    self.currentUser = [PFUser currentUser];
+    
+    if (self.currentUser) {
         //user is logged in
         PFQuery *pendingRequestsQuery = [PFQuery queryWithClassName:@"FriendRequest" ];
-        [pendingRequestsQuery whereKey:@"to" equalTo:self.currentUser];
+                [pendingRequestsQuery whereKey:@"to" equalTo:self.currentUser];
         [pendingRequestsQuery whereKey:@"status" equalTo:@"pending"];
         [pendingRequestsQuery includeKey:@"from.user.username"];
         [pendingRequestsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
